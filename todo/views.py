@@ -10,3 +10,13 @@ def todoView(request):
         "object_list": queryset,
     }
     return render(request, "todo.html", context)
+
+def createView(request):
+    form = TodoItemForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect("/todo/")
+    context = {
+        "form": form,
+    }
+    return render(request, "todo.html", context)
