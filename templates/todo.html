@@ -5,3 +5,8 @@
        <li>{{ object.content }}</li>
         {% endfor %}
 </ul>
+
+<form action="/create/" method="POST">{{ csrf_token }}
+    {{ form.as_f }}
+    <input type="submit" value="Save" />
+</form>
