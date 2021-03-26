@@ -5,9 +5,11 @@ from .forms import TodoItemForm
 # Create your views here.
 
 def todoView(request):
+    form = TodoItemForm(request.POST or None)
     queryset = TodoItem.objects.all()
     context = {
         "object_list": queryset,
+        "form": form,
     }
     return render(request, "todo.html", context)
 
