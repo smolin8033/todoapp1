@@ -6,7 +6,7 @@
         {% endfor %}
 </ul>
 
-<form action="/create/" method="POST">{{ csrf_token }}
+<form action="/create/" method="POST">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save" />
 </form>
