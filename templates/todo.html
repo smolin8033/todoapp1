@@ -2,7 +2,14 @@
 
 <ul>
         {% for object in object_list %}
-       <li>{{ object.content }}</li>
+       <li>{{ object.content }}
+           <form action="/delete/{{ object.id }}/"
+                 style="display: inline;"
+                 method="POST">
+               {% csrf_token %}
+               <input type="submit" value="Delete" />
+           </form>
+       </li>
         {% endfor %}
 </ul>
 
