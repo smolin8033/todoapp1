@@ -22,3 +22,6 @@ def createView(request):
         "form": form,
     }
     return render(request, "todo.html", context)
+
+def deleteView(request):
+    pass
