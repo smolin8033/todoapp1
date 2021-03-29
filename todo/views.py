@@ -22,5 +22,9 @@ def createView(request):
     }
     return render(request, "todo.html", context)
 
-def deleteView(request):
-    pass
+def deleteView(request, my_id):
+    obj = TodoItem.objects.get(id=my_id)
+    if request.method == "POST":
+        obj.delete()
+        return redirect("/todo/")
+    return render(request, "todo.html")
