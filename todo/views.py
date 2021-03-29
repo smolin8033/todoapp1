@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import TodoItem
 from .forms import TodoItemForm
 # Create your views here.
